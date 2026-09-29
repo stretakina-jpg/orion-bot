@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+@keyframes numberTick {
+  0% { opacity: 0.3; transform: translateY(-6px) scale(0.92); filter: blur(2px); }
+  55% { opacity: 1; transform: translateY(1px) scale(1.06); filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@keyframes priceFlash {
+  0% { opacity: 0.25; transform: translateY(-3px) scale(0.96); filter: blur(1px); }
+  50% { opacity: 1; transform: translateY(1px) scale(1.04); filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #06080B;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-heading {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* =========================================================================
+ * PWA Asset Selector CSS & Variables (from https://oriontraderbot.app/pwa/asset-selector)
+ * ========================================================================= */
+:root {
+  --filter-content-width: 80px;
+  --filter-content-collapsed-width: 40px;
+  --min-carousel-width: 272px;
+  --color-general-fill-base: #06080B;
+  --color-general-fill-secondary: #121820;
+  --color-general-fill-tertiary: #182230;
+  --color-general-fill-quaternary: #1c2430;
+  --color-general-fill-quinary: #242f3d;
+  --color-general-foreground-primary: #ffffff;
+  --color-general-foreground-secondary: #94a3b8;
+  --color-general-foreground-tertiary: #64748b;
+  --color-general-stroke-primary: #334155;
+  --color-general-stroke-secondary: #1e293b;
+  --color-general-stroke-tertiary: #0f172a;
+  --color-positive-fill-primary: #10b981;
+  --color-negative-fill-primary: #ef4444;
+  --color-uptrend-fill-primary: #059669;
+  --color-uptrend-fill-secondary: #10b981;
+  --color-downtrend-fill-primary: #dc2626;
+  --color-downtrend-fill-secondary: #ef4444;
+  --gradient-ui-background-bottom-profit: linear-gradient(180deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.02) 100%);
+  --gradient-ui-background-bottom-loss: linear-gradient(180deg, rgba(239, 68, 68, 0.15) 0%, rgba(239, 68, 68, 0.02) 100%);
+  --border-element-radius-xs: 4px;
+  --border-element-radius-sm: 8px;
+  --border-element-radius-md: 10px;
+  --border-element-radius-lg: 14px;
+  --border-element-radius-full: 9999px;
+  --spacing-container-stack-xs: 6px;
+  --spacing-container-stack-sm: 10px;
+  --spacing-container-stack-md: 16px;
+  --spacing-element-inset-xs: 6px;
+  --spacing-element-inset-sm: 8px;
+  --spacing-element-inset-md: 12px;
+  --sizing-element-vertical-sm: 28px;
+  --sizing-element-vertical-md: 36px;
+  --sizing-element-vertical-lg: 44px;
+  --sizing-element-vertical-xl: 52px;
+}
+
+._wrapper_jfp1l_8 {
+  position: relative;
+}
+
+._wrapper_jfp1l_8 ._groupWrapper_jfp1l_11 {
+  flex: 1;
+  min-width: 0;
+}
+
+._wrapper_jfp1l_8 ._carouselWrapper_jfp1l_16 {
+  width: 100%;
+  padding-block: 4px;
+  overflow-x: hidden;
+}
+
+@media (min-width: 480px) {
+  ._wrapper_jfp1l_8 ._carouselWrapper_jfp1l_16 {
+    min-width: var(--min-carousel-width);
+  }
+}
+
+._wrapper_jfp1l_8 ._carouselViewport_jfp1l_26 {
+  width: 100%;
+  padding: 0 8px 1px 4px;
+}
+
+._wrapper_jfp1l_8 ._carouselContainer_jfp1l_31 {
+  display: flex;
+  gap: var(--spacing-container-stack-xs);
+}
+
+._buttonFilter_jfp1l_37 {
+  padding: 4px 6px 4px 10px;
+}
+
+._filter_jfp1l_41 {
+  width: var(--filter-content-width);
+  transition: width 0.3s ease, transform 0.3s ease;
+}
+
+._collapsible_jfp1l_48 {
+  width: var(--filter-content-collapsed-width);
+}
+
+/* Asset Card in Carousel */
+._wrapper_prpkb_1 {
+  min-width: 80px;
+  height: 40px;
+  background-color: var(--color-general-fill-quaternary);
+  border-radius: var(--border-element-radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+@media (min-width: 1024px) {
+  ._wrapper_prpkb_1 {
+    min-width: 116px;
+    max-width: 190px;
+    flex: 1;
+  }
+}
+
+._wrapper_prpkb_1._selected_prpkb_30 {
+  flex-grow: 1;
+  background-color: var(--color-general-fill-secondary);
+  border-color: rgba(147, 51, 234, 0.6);
+  box-shadow: 0 0 14px rgba(147, 51, 234, 0.25);
+}
+
+._wrapper_prpkb_1._profit_prpkb_41 {
+  background: var(--gradient-ui-background-bottom-profit), var(--color-general-fill-quaternary);
+}
+
+._wrapper_prpkb_1._loss_prpkb_52 {
+  background: var(--gradient-ui-background-bottom-loss), var(--color-general-fill-quaternary);
+}
+
+._overflow_prpkb_72 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+._info_prpkb_78 {
+  padding-inline: 4px 2px;
+  min-width: 40px;
+  flex-grow: 1;
+}
+
+/* Sentiment Bar */
+._Sentiment_2mua0_1 {
+  height: 100%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-element-radius-xs);
+  overflow: hidden;
+  background: var(--color-general-fill-base);
+  padding: 6px 4px;
+}
+
+._bar_2mua0_27 {
+  border-radius: var(--border-element-radius-xs);
+  width: 4px;
+  transition: height ease-in 0.4s, background ease-in-out 0.2s;
+}
+
+._bar_2mua0_27[data-direction='up'] {
+  background: linear-gradient(180deg, var(--color-uptrend-fill-secondary) 0%, var(--color-uptrend-fill-primary) 100%);
+}
+
+._bar_2mua0_27[data-direction='down'] {
+  background: linear-gradient(180deg, var(--color-downtrend-fill-primary) 0%, var(--color-downtrend-fill-secondary) 100%);
+}

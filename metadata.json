@@ -1,0 +1,6 @@
+{
+  "name": "Orion Trading Bot",
+  "description": "Plataforma de alta precisão Orion Trading Bot com gerenciamento de configurações, conexão multi-corretora, modo VIBE/VIP e automação avançada.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

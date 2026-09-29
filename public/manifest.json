@@ -1,0 +1,25 @@
+{
+  "name": "Orion Bot",
+  "short_name": "Orion Bot",
+  "start_url": "/brokerqx",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#06080B",
+  "theme_color": "#06080B",
+  "orientation": "portrait-primary",
+  "lang": "pt",
+  "icons": [
+    {
+      "src": "/fx/icone-ultra-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/fx/icone-ultra-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}
